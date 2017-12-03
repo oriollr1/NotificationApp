@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+</head>
+    
+<body>
+
+<!--PAGINA HOME-->
+<div data-role="page" id="home">
+    
+  <div data-role="panel" id="myPanel"> 
+    <input type="button" value="Notification" id="gotoPageTwo">
+    <input type="button" value="Delete" id="delete_button">
+    <input type="button" value="Insert" id="insert_button">
+
+  </div> 
+    
+  <div data-role="header">
+    <h1>Notification App</h1>
+      <a href="#myPanel">Open panel</a>
+  </div>
+  <div data-role="main" class="ui-content">
+      
+       
+      
+    
+	<h3>Oriol's Notification App</h3>
+  </div>
+  <div data-role="footer">
+    <h1>Oriol López Reina</h1>
+  </div> 
+</div> 
+
+    <!--PAGINA set notification-->
+<div data-role="page" id="pagetwo">
+    
+  <div data-role="panel" id="myPanel2"> 
+    <input type="button" value="Notification" id="gotoPageTwo">
+    <input type="button" value="Delete" id="delete_button">
+    <input type="button" value="Insert" id="insert_button">
+  </div>
+    
+  <div data-role="header">
+      <h1>Notification App</h1>
+                  
+      <a href="#myPanel2">Open panel</a>
+      
+      <a href="#home">Return Home</a>
+	
+  </div>
+  <div data-role="main" class="ui-content">
+    <h4>Set your notification:</h4>
+    <form>
+     <label for="date-1">Date and Time:  "</label>
+     <input type="datetime-local" name="date-1" id="date-1" value="">
+          <label for="text-basic">Description:</label>
+          <input type="text" name="text-basic" id="description" value="">
+          <button class="ui-btn ui-shadow" style="background-color:skyblue;" id="submit">Submit</button>
+          <input type="button" value="Load List" id="loadListButt">
+    </form>
+      
+          <ul data-role="listview" id="myList">
+
+          </ul>
+
+  </div>
+  <div data-role="footer">
+    <h1>Oriol López Reina</h1>
+  </div> 
+</div> 
+    
+    <script type= "text/javascript" src="cordova.js"></script>
+    <script type= "text/javascript" src="js/index.js"></script>
+    <script type= "text/javascript" src="js/functions.js"></script>
+</body>
+</html>
