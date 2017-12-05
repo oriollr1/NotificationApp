@@ -1,82 +1,90 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
-    
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    
+	<title>Oriol López Reina - Notification App</title>
+	<meta http-equiv="Content-Security-Policy" content="default-src * gap: ws: https://ssl.gstatic.com;style-src * 'unsafe-inline' 'self' data: blob:;script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;img-src * data: 'unsafe-inline' 'self' content:;fmedia-src mediastream; img-src 'self' data: blob: cdvphotolibrary:">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="jquery.mobile/jquery.mobile-1.4.5.js"></script>
+	<script type="text/javascript" src="js/moment.js"></script>
+	<link rel="stylesheet" type="text/css" href="jquery.mobile/jquery.mobile-1.4.5.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+	<link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/Style.css">
 </head>
-    
+
 <body>
 
-<!--PAGINA HOME-->
-<div data-role="page" id="home">
-    
-  <div data-role="panel" id="myPanel"> 
-    <input type="button" value="Notification" id="gotoPageTwo">
-    <input type="button" value="Delete" id="delete_button">
-    <input type="button" value="Insert" id="insert_button">
+    <div data-role="page" id="MainPage">
+	<div data-role="header" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#menu" data-role="none" data-rel="popup">/// Db Part</a></li>
+				<li><a href="#" class="homefont">Notifications</a></li>
+				<li><a style="color:cornflowerblue" href="#">Return Home</a></li>
+			</ul>
+		</div>
+	</div>
 
-  </div> 
-    
-  <div data-role="header">
-    <h1>Notification App</h1>
-      <a href="#myPanel">Open panel</a>
-  </div>
-  <div data-role="main" class="ui-content">
-      
-       
-      
-    
-	<h3>Oriol's Notification App</h3>
-  </div>
-  <div data-role="footer">
-    <h1>Oriol López Reina</h1>
-  </div> 
-</div> 
+	<div data-role="main" class="ui-content">
+		<div data-role="panel" id="menu" data-display="overlay">
+			<ul data-role="listview" data-inset="true">
+				<li><a id="as1_btn" >Go to next Part</a></li>
+			</ul>
+		</div>
+		<h2 style="color:darkcyan ">Oriol's Notification App</h2>
+		<form>
+			Select date and time:
+			<input type="datetime-local" name="noti_datetime" id="noti_datetime">
+			<input type="button" class="ui-btn ui-btn-b" value="Set Notification" id="noti_btn_datetime"><br>
+		</form>
+		<p style="color: slategrey">To access the DataBase part of the exercise go to the Db Part in the menu</p>
+	</div>
+</div>
 
-    <!--PAGINA set notification-->
-<div data-role="page" id="pagetwo">
-    
-  <div data-role="panel" id="myPanel2"> 
-    <input type="button" value="Notification" id="gotoPageTwo">
-    <input type="button" value="Delete" id="delete_button">
-    <input type="button" value="Insert" id="insert_button">
-  </div>
-    
-  <div data-role="header">
-      <h1>Notification App</h1>
-                  
-      <a href="#myPanel2">Open panel</a>
-      
-      <a href="#home">Return Home</a>
+<div data-role="page" id="As1">
+	<div data-role="header" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" class="homefont">Database Part</a></li>
+				<li><a style="color:cornflowerblue" class="home_btn" >Return Home</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="main" class="ui-content">
+        
+        <div data-role="listview" id="datepicker" data-display="overlay">
+			<ul data-role="listview" data-inset="true">
+				<li>
+					<input type="text" placeholder="Write a Title" name="Task_title" id="Task_title" value="" maxlength="30" required></li>
+				<li><a id="PickDate" >Select the Date <span id="DatePrint"></span></a></li>
+				<li><a id="PickTime" >Select the Time <span id="TimePrint"></span></a></li>
+                <input type="button" class="ui-btn ui-btn-b" value="Add Notification" id="ListButton"><br>
+			</ul>
+		</div>
+        
+		<ul data-role="listview" id="ListHandler">
+
+		</ul>
 	
-  </div>
-  <div data-role="main" class="ui-content">
-    <h4>Set your notification:</h4>
-    <form>
-     <label for="date-1">Date and Time:  "</label>
-     <input type="datetime-local" name="date-1" id="date-1" value="">
-          <label for="text-basic">Description:</label>
-          <input type="text" name="text-basic" id="description" value="">
-          <button class="ui-btn ui-shadow" style="background-color:skyblue;" id="submit">Submit</button>
-          <input type="button" value="Load List" id="loadListButt">
-    </form>
-      
-          <ul data-role="listview" id="myList">
+	</div>
 
-          </ul>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a style="color: brown" id="deleteAllDb" data-role="none" data-rel="popup">Delete All Database</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
 
-  </div>
-  <div data-role="footer">
-    <h1>Oriol López Reina</h1>
-  </div> 
-</div> 
-    
-    <script type= "text/javascript" src="cordova.js"></script>
-    <script type= "text/javascript" src="js/index.js"></script>
-    <script type= "text/javascript" src="js/functions.js"></script>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
+

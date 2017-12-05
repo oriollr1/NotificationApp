@@ -15,6 +15,9 @@
     },
     "cordova-plugin-local-notification": {
       "PACKAGE_NAME": "com.oriollr1.notification"
+    },
+    "cordova-plugin-datetimepicker": {
+      "PACKAGE_NAME": "com.oriollr1.notification"
     }
   },
   "dependent_plugins": {

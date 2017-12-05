@@ -16,6 +16,10 @@
     <feature name="LocalNotification">
         <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification" />
     </feature>
+    <feature name="DateTimePicker">
+        <param name="android-package" value="com.alexanderploner.datetimepicker.DateTimePicker" />
+        <param name="onload" value="true" />
+    </feature>
     <name>Oriol_Lopez_NotificationApp</name>
     <icon src="res/icon.png" />
     <description>

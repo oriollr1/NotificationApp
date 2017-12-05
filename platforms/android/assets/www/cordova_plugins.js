@@ -49,6 +49,15 @@ module.exports = [
       "cordova.plugins.notification.local.core",
       "plugin.notification.local.core"
     ]
+  },
+  {
+    "id": "cordova-plugin-datetimepicker.plugin",
+    "file": "plugins/cordova-plugin-datetimepicker/www/plugin.js",
+    "pluginId": "cordova-plugin-datetimepicker",
+    "clobbers": [
+      "DateTimePicker"
+    ],
+    "runs": true
   }
 ];
 module.exports.metadata = 
@@ -58,7 +67,8 @@ module.exports.metadata =
   "cordova-sqlite-storage": "2.1.2",
   "cordova-plugin-device": "1.1.7",
   "cordova-plugin-badge": "0.8.5",
-  "cordova-plugin-local-notification": "0.9.0-beta.1"
+  "cordova-plugin-local-notification": "0.9.0-beta.1",
+  "cordova-plugin-datetimepicker": "1.0.0"
 };
 // BOTTOM OF METADATA
 });
